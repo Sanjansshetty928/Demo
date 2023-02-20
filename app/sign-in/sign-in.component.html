@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card"
+        style="width: 25rem;margin-top: 40px; background-image: url(https://img.freepik.com/free-photo/empty-dark-room-modern-futuristic-sci-fi-background-3d-illustration_35913-2332.jpg?w=996&t=st=1672237595~exp=1672238195~hmac=e3522b46d51124cfc87fb5539794ad0304c3c425bdd1bc9692e79df3f76eb50f);">
+        <div class="text-center">
+          <h1>SignUp</h1>
+
+        </div>
+
+        <form #userForm="ngForm">
+          <div class="form-group">
+            <div class="col-md-12">
+              <label for="" style="color:whitesmoke;">UserName</label>
+              <input ngModel required minlength="4" class="form-control" type="text" placeholder="Enter the username"
+                #t_username="ngModel" name="username" id="employeeId"
+                [class.is-invalid]="t_username.invalid && t_username.touched" [class.is-valid]="t_username.valid">
+              <p *ngIf="t_username.touched && t_username.invalid" class="text-danger">
+                <small *ngIf="t_username.errors?.['required']">username is required</small>
+                <small *ngIf="t_username.errors?.['minlength']">username should have atleast 4 digits</small>
+              </p>
+            </div>
+
+          </div>
+          <div class="form-group">
+            <div class="col-md-12">
+              <label for="" style="color:whitesmoke;">Email</label>
+              <input ngModel required minlength="6" class="form-control" type="email" placeholder="Enter the email"
+                #t_email="ngModel" name="email" id="email" [class.is-invalid]="t_email.invalid && t_email.touched"
+                [class.is-valid]="t_email.valid">
+              <p *ngIf="t_email.touched && t_email.invalid" class="text-danger">
+                <small *ngIf="t_email.errors?.['required']">email is required</small>
+                <small *ngIf="t_email.errors?.['minlength']">email should have atleast 6 characters</small>
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12">
+              <label for="password" style="color:whitesmoke;">Password</label>
+
+              <input ngModel required minlength="6" class="form-control" placeholder="Enter the password"
+                type="password" #t_password="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" name="password"
+                [class.is-invalid]="t_password.invalid && t_password.touched" [class.is-valid]="t_password.valid">
+              <p *ngIf="t_password.touched && t_password.invalid" class="text-danger">
+                <small *ngIf="t_password.errors?.['required']">password is required</small>
+                <small *ngIf="t_password.errors?.['minlength']">password should have alphanumeric
+                  characters</small>
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12">
+              <label for="password" style="color:whitesmoke;">Confirm Password</label>
+
+              <input ngModel required minlength="6" class="form-control" placeholder="Enter the confirm password"
+                type="password" #t_cfpassword="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}" name="cfpassword"
+                [class.is-invalid]="t_cfpassword.invalid && t_cfpassword.touched" [class.is-valid]="t_cfpassword.valid">
+              <p *ngIf="t_cfpassword.touched && t_cfpassword.invalid" class="text-danger">
+                <small *ngIf="t_cfpassword.errors?.['required']">password is required</small>
+                <small *ngIf="t_cfpassword.errors?.['minlength']">password should have alphanumeric
+                  characters</small>
+              </p>
+            </div>
+          </div>
+
+
+
+          <div class="form-check d-flex justify-content-center mb-1">
+            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+            <label class="form-check-label" for="form2Example3g" style="color:whitesmoke;">
+              I agree all statements in <a href="#!" class="text-body"><u style="color:whitesmoke;">Terms of
+                  service</u></a>
+            </label>
+          </div>
+
+          <div class="d-flex justify-content-center">
+            <button [disabled]="userForm.invalid" type="button" class="btn btn-success btn-block btn-lg gradient-custom-5 text-body">Register</button>
+          </div>
+
+          <p class="text-center text-muted mt-2 mb-0" style="color:whitesmoke;">Have already an account? <a href="#!"
+              class="fw-bold text-body"><u>Login here</u></a></p>
+
+          <!-- <button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button> -->
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

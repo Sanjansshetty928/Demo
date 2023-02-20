@@ -1,0 +1,118 @@
+<div class="container-fluid">
+<h1 style="text-align: center; font-size: medium; margin-top: 100px;">World's Largest NoBrokerage Property Site</h1>
+
+<div style="text-align: center;">
+    
+<button type="button" class="btn btn-outline-default">Buy</button>
+<button type="button" class="btn btn-outline-default">Sell</button>
+<button type="button" class="btn btn-outline-default">Rent</button>
+</div>
+
+<div class="container" style="align-content: center;margin-left: 150px;" class="row">
+  
+  
+    <div class="col-3">
+    <select class="form-select" #city (change)="getCity(city.value)">
+     <option selected>Search by city</option>
+     <option value="Bangalore">Bangalore</option>
+     <option value="Mangalore">Mangalore</option>
+    <option value="Chitradurga">Chitradurga</option>
+     <option value="Chikkamagaluru">Chikkamagaluru</option>
+    <option value="Tumkur">Tumkur</option>
+     <option value="Udupi">Udupi</option>
+    </select>
+    </div>
+    <div class="col-4">
+      <ng-multiselect-dropdown
+      [placeholder]="'Search by Area'"
+      [settings]="dropdownSettings"
+      [data]="dropdownList1"
+      [(ngModel)]="selectedItems1"
+      (onSelect)="onItemSelect($event)"
+      (onSelectAll)="onSelectAll($event)"
+    >
+    </ng-multiselect-dropdown>
+    </div>
+    <div class="col-2">
+      <button class="form-control" style="color:red;background-color: aquamarine;"  type="submit">Search</button>
+    </div>
+    </div>
+    <br>
+    <div class="row">
+        
+    <div class="col-3 text-center">
+    <input type="radio"  name="type" value="Full House">
+<label for="">Full House</label>
+</div>
+<div class="col-3">
+<input type="radio"  name="type" value="PG/HOSTEL">
+<label for="">PG/HOSTEL</label>
+</div>
+<div class="col-3">
+<ng-multiselect-dropdown
+  [placeholder]="'BHK Type'"
+  [settings]="dropdownSettings"
+  [data]="dropdownList"
+  [(ngModel)]="selectedItems"
+  (onSelect)="onItemSelect($event)"
+  (onSelectAll)="onSelectAll($event)"
+>
+</ng-multiselect-dropdown>
+</div>
+
+
+
+
+<!-- <div class="col-3">
+    <input type="radio"  name="type" value="flatmates">
+<label for="">FlatMates</label>
+    
+</div> -->
+<!-- <div id="list1" class="dropdown-check-list" tabindex="100">
+    <span class="anchor">Select Fruits</span>
+    <ul class="items">
+      <li><input type="checkbox" />Apple </li>
+      <li><input type="checkbox" />Orange</li>
+      <li><input type="checkbox" />Grapes </li>
+      <li><input type="checkbox" />Berry </li>
+      <li><input type="checkbox" />Mango </li>
+      <li><input type="checkbox" />Banana </li>
+      <li><input type="checkbox" />Tomato</li>
+    </ul>
+  </div>
+<script>
+    var checkList = document.getElementById('list1');
+checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+  if (checkList.classList.contains('visible'))
+    checkList.classList.remove('visible');
+  else
+    checkList.classList.add('visible');
+}
+
+</script>  
+</div> -->
+<!-- <div>
+    <select>
+        <option><input type="checkbox" name="hi">HI</option>
+    </select>
+</div> -->
+<p style="text-align: center;">------Are you a property Owner?------</p>
+<div class="row">
+    <div class="text-center" style="width: 100%;">
+<button type="submit" class="btn btn-success button button1" style="margin:auto;">Post a Free Property Ad</button>
+</div>
+</div>
+<h3 style="text-align: center; margin-top: 50px; " id="b">Why Use FindMyHome</h3>
+
+
+</div>
+
+ 
+<div class="container">
+  
+    <div class="row">
+      <footer class="col-12">
+        <app-footer></app-footer>
+      </footer>
+    </div>
+  </div>
